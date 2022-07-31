@@ -49,13 +49,13 @@ resource "azurerm_network_interface" "Arvind" {
 
 resource "azurerm_windows_virtual_machine" "ArvindVM" {
   name                = "centralindiavm"
-  resource_group_name = azurerm_network_interface.arvind.name
-  location            = azurerm_network_interface.arvind.location
+  resource_group_name = azurerm_network_interface.Arvind.name
+  location            = azurerm_network_interface.Arvind.location
   size                = "Standard_F2"
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
   network_interface_ids = [
-    azurerm_network_interface.arvind.id,
+    azurerm_network_interface.Arvind.id,
   ]
 
   os_disk {
