@@ -26,7 +26,6 @@ resource "azurerm_windows_virtual_machine" "example" {
     storage_account_type = "Standard_LRS"
   }
 
-  
 
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
@@ -35,8 +34,6 @@ resource "azurerm_windows_virtual_machine" "example" {
     version   = "latest"
   }
 }
-
-#  India vm
 
 resource "azurerm_network_interface" "Arvind" {
   name                = "centralindia-nic"
