@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "example" {
 
 resource "azurerm_windows_virtual_machine" "example" {
   name                = "eastasiavm"
-  resource_group_name = azurerm_network_interface.example.name
+  resource_group_name = azurerm_network_interface.example.resource_group_name
   location            = azurerm_network_interface.example.location
   size                = "Standard_F2"
   admin_username      = "zadmin"
@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "Arvind" {
 
 resource "azurerm_windows_virtual_machine" "ArvindVM" {
   name                = "centralindiavm"
-  resource_group_name = azurerm_network_interface.Arvind.name
+  resource_group_name = azurerm_network_interface.Arvind.resource_group_name
   location            = azurerm_network_interface.Arvind.location
   size                = "Standard_F2"
   admin_username      = "zadmin"
@@ -88,7 +88,7 @@ resource "azurerm_network_interface" "south" {
 
 resource "azurerm_windows_virtual_machine" "arvindsouth" {
   name                = "southindiavm"
-  resource_group_name = azurerm_network_interface.south.name
+  resource_group_name = azurerm_network_interface.south.resource_group_name
   location            = azurerm_network_interface.south.location
   size                = "Standard_F2"
   admin_username      = "zadmin"
@@ -128,7 +128,7 @@ resource "azurerm_network_interface" "ukwestnic" {
 
 resource "azurerm_windows_virtual_machine" "ukwestexample" {
   name                = "ukwestvm"
-  resource_group_name = azurerm_network_interface.ukwestnic.name
+  resource_group_name = azurerm_network_interface.ukwestnic.resource_group_name
   location            = azurerm_network_interface.ukwestnic.location
   size                = "Standard_F2"
   admin_username      = "zadmin"
