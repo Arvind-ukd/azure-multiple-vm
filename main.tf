@@ -112,7 +112,7 @@ resource "azurerm_windows_virtual_machine" "arvindeastus" {
   }
 }
 
- west us
+ 
 
 resource "azurerm_network_interface" "ukwestus" {
   name                = "westus-nic"
