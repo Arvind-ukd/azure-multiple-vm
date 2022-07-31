@@ -90,7 +90,7 @@ resource "azurerm_windows_virtual_machine" "arvindsouth" {
   name                = "southindiavm"
   resource_group_name = azurerm_network_interface.south.resource_group_name
   location            = azurerm_network_interface.south.location
-  size                = "Standard_F2"
+  size                = "Standard_D2s_v3"
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
   network_interface_ids = [
@@ -130,7 +130,7 @@ resource "azurerm_windows_virtual_machine" "ukwestexample" {
   name                = "ukwestvm"
   resource_group_name = azurerm_network_interface.ukwestnic.resource_group_name
   location            = azurerm_network_interface.ukwestnic.location
-  size                = "Standard_F2"
+  size                = "Standard_D2s_v3"
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
   network_interface_ids = [
