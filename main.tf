@@ -94,7 +94,7 @@ resource "azurerm_windows_virtual_machine" "arvindeastus" {
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
   network_interface_ids = [
-    azurerm_network_interface.south.id,
+    azurerm_network_interface.eastus.id,
   ]
 
   os_disk {
@@ -121,7 +121,7 @@ resource "azurerm_network_interface" "ukwestus" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = data.azurerm_subnet.vmuwestus.id
+    subnet_id                     = data.azurerm_subnet.vmwestus.id
     private_ip_address_allocation = "Dynamic"
   }
 }
