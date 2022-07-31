@@ -30,7 +30,7 @@ output "subnet_id-2" {
 
 
 data "azurerm_subnet" "vmukwest" {
-  name                 = "backend"
+  name                 = "ukwest-subnet"
   virtual_network_name = "ukwest-network"
   resource_group_name  = "arvind-rg"
 }
