@@ -14,7 +14,7 @@ data "azurerm_subnet" "vmcentralindia" {
   resource_group_name  = "arvind-rg"
 }
 
-output "subnet_id" {
+output "subnet_id-1" {
   value = data.azurerm_subnet.vmcentralindia.id
 }
 
@@ -24,7 +24,7 @@ data "azurerm_subnet" "vmsouthindia" {
   resource_group_name  = "arvind-rg"
 }
 
-output "subnet_id" {
+output "subnet_id-2" {
   value = data.azurerm_subnet.vmsouthindia.id
 }
 
@@ -35,7 +35,7 @@ data "azurerm_subnet" "vmukwest" {
   resource_group_name  = "arvind-rg"
 }
 
-output "subnet_id" {
+output "subnet_id-3" {
   value = data.azurerm_subnet.vmukwest.id
 }
 
