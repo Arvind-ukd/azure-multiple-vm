@@ -73,23 +73,23 @@ resource "azurerm_windows_virtual_machine" "ArvindVM" {
   }
 }
 
-# south india vm
-resource "azurerm_network_interface" "south" {
-  name                = "southindia-nic"
-  location            =  "South India"
+# vm eastus
+resource "azurerm_network_interface" "eastus" {
+  name                = "eastus-nic"
+  location            =  "East US"
   resource_group_name =  "arvind-rg"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = data.azurerm_subnet.vmsouthindia.id
+    subnet_id                     = data.azurerm_subnet.vmeastus.id
     private_ip_address_allocation = "Dynamic"
   }
 }
 
-resource "azurerm_windows_virtual_machine" "arvindsouth" {
-  name                = "southindiavm"
-  resource_group_name = azurerm_network_interface.south.resource_group_name
-  location            = azurerm_network_interface.south.location
+resource "azurerm_windows_virtual_machine" "arvindeastus" {
+  name                = "eastusvm"
+  resource_group_name = azurerm_network_interface.eastus.resource_group_name
+  location            = azurerm_network_interface.eastus.location
   size                = "Standard_D2s_v3"
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
@@ -112,29 +112,29 @@ resource "azurerm_windows_virtual_machine" "arvindsouth" {
   }
 }
 
-# uk west
+ west us
 
-resource "azurerm_network_interface" "ukwestnic" {
-  name                = "ukwest-nic"
-  location            =  "UK West"
+resource "azurerm_network_interface" "ukwestus" {
+  name                = "westus-nic"
+  location            =  "West US"
   resource_group_name =  "arvind-rg"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = data.azurerm_subnet.vmukwest.id
+    subnet_id                     = data.azurerm_subnet.vmuwestus.id
     private_ip_address_allocation = "Dynamic"
   }
 }
 
-resource "azurerm_windows_virtual_machine" "ukwestexample" {
-  name                = "ukwestvm"
-  resource_group_name = azurerm_network_interface.ukwestnic.resource_group_name
-  location            = azurerm_network_interface.ukwestnic.location
+resource "azurerm_windows_virtual_machine" "westusvm" {
+  name                = "westusvm"
+  resource_group_name = azurerm_network_interface.ukwestus.resource_group_name
+  location            = azurerm_network_interface.ukwestus.location
   size                = "Standard_D2s_v3"
   admin_username      = "zadmin"
   admin_password      = "Pass@123Pass@123"
   network_interface_ids = [
-    azurerm_network_interface.ukwestnic.id,
+    azurerm_network_interface.ukwestus.id,
   ]
 
   os_disk {
