@@ -6,7 +6,7 @@ resource "azurerm_network_interface" "example" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.vmeastasia.id
-    private_ip_address_allocation = "Static"
+    private_ip_address_allocation = "Dynamic"
   }
 }
 
@@ -43,7 +43,7 @@ resource "azurerm_network_interface" "Arvind" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.vmcentralindia.id
-    private_ip_address_allocation = "Static"
+    private_ip_address_allocation = "Dynamic"
   }
 }
 
@@ -82,7 +82,7 @@ resource "azurerm_network_interface" "south" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.vmsouthindia.id
-    private_ip_address_allocation = "Static"
+    private_ip_address_allocation = "Dynamic"
   }
 }
 
@@ -122,7 +122,7 @@ resource "azurerm_network_interface" "ukwestnic" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.vmukwest.id
-    private_ip_address_allocation = "Static"
+    private_ip_address_allocation = "Dynamic"
   }
 }
 
